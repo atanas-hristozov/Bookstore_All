@@ -1,0 +1,115 @@
+@import 'var.less';
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    
+    //background-color: #f1f1f1;
+    background: linear-gradient(90deg, #243a43, #1a2741);
+    
+    box-shadow: 0px 5px 10px rgba(32, 32, 32, 0.4);
+    border-bottom: 7px solid @color-green;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    @media only screen and (min-width: @mobile){
+        border-bottom: none;
+        border-right: 7px solid @color-green;
+        width: 250px;
+    } 
+    &-logo{
+        margin: 0 auto;
+    }
+  }
+  
+  /* Sidebar links */
+  .sidebar a{
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #4CAF50;
+    //background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 250px;
+    padding: 1px 16px;
+    //height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: /*700px*/ @mobile) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: /*460px*/ @mobile) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  /*
+  .sidebar{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    &-categories{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @media only screen and (min-width: @desktop){
+        align-items: flex-start;
+        justify-content: start;
+    }
+      p{
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+      }
+      @media only screen and (min-width: @desktop){
+        text-align: start;
+    }
+    }
+  }
+  */
+  .sidebar{
+    &-categories{
+      p{
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+        @media only screen and (min-width: @mobile){
+          text-align: left;
+          margin-left: 18px;
+      }
+      }
+    }
+  }
